@@ -1,0 +1,10 @@
+<div class="lower-tab-nav">
+  <ion-tabs>
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button [tab]="comp.url" *ngFor="let comp of lowerTabComp">
+        <ion-icon [name]="comp.ion_icon"></ion-icon>
+        <ion-label>{{comp.label}}</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</div>

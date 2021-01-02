@@ -1,0 +1,32 @@
+<ion-content>
+  <ion-list>
+    <ion-item [attr.data-selected]="produto.qtt ? true : null" class="lista" *ngFor="let produto of produtos">
+      <ion-icon item-left *ngIf="produto.icon" color="primary" [name]="produto.icon"></ion-icon>
+      <img *ngIf="produto.img" [src]="produto.img" alt="" item-left class="product-thumb" />
+      <ion-label>
+        <h2 text-wrap>{{produto.name}}</h2>
+        <p>$ {{produto.price | price}}</p>
+      </ion-label>
+      <div item-end>
+        <button ion-button color="primary" (click)="produto.qtt = produto.qtt - 1">-</button>
+        <input ion-button clear type="tel" [(ngModel)]="produto.qtt" name="qtt" class="input-qtt" />
+        <button ion-button color="primary" (click)="produto.qtt = produto.qtt + 1">+</button>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-list no-margin>
+    <ion-item no-padding>
+      <ion-label padding-left>
+        <strong>Final value: </strong>
+        <span>R$ {{finalValue | price}}</span>
+      </ion-label>
+      <button [disabled]="!finalValue" item-end ion-button color="danger" (click)="finalizarCompra()" icon-left>
+        <ion-icon name="cart"></ion-icon>
+        Purchase
+      </button>
+    </ion-item>
+  </ion-list>
+</ion-footer>

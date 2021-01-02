@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-item>
+      <ion-select placeholder="Address"  interface="action-sheet" value="deliveryAddress">
+        <ion-select-option value="f">Address 1</ion-select-option>
+        <ion-select-option value="m">Address 2</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-toolbar>
+  <ion-searchbar type="text" color="light" placeholder="Search text" clearInput></ion-searchbar>
+</ion-header>
+
+<ion-content >
+
+    <app-slide></app-slide>
+  
+</ion-content>
+<app-lower-tab></app-lower-tab>
